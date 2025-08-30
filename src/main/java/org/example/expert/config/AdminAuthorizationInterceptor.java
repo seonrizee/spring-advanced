@@ -17,7 +17,7 @@ public class AdminAuthorizationInterceptor implements HandlerInterceptor {
         validateAdminRole(request);
 
         Long userId = (Long) request.getAttribute("userId");
-        log.info("[ADMIN_요청_성공] Method={}, URI={}, UserID={}",
+        log.info("[ADMIN_API_인가] Method={}, URI={}, UserID={}",
                 request.getMethod(),
                 request.getRequestURI(),
                 userId);
