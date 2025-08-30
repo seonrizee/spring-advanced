@@ -14,7 +14,7 @@ public class AdminAuthorizationInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
 
-        authorizeAdmin(request);
+        validateAdminRole(request);
 
         Long userId = (Long) request.getAttribute("userId");
         log.info("[ADMIN_요청_성공] Method={}, URI={}, UserID={}",
@@ -25,7 +25,7 @@ public class AdminAuthorizationInterceptor implements HandlerInterceptor {
         return true;
     }
 
-    private void authorizeAdmin(HttpServletRequest request) {
+    private void validateAdminRole(HttpServletRequest request) {
 
         String userRoleString = request.getAttribute("userRole").toString();
         if (userRoleString == null) {
