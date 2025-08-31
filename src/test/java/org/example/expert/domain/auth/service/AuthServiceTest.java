@@ -32,7 +32,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 class AuthServiceTest {
 
     private static final String TEST_EMAIL = "test@test.com";
-    private static final String TEST_PASSWORD = "test1234";
+    private static final String TEST_PASSWORD = "Test1234!@#$";  // 강화된 비밀번호 패턴에 맞춤
     private static final String TEST_ROLE = "USER";
     @Mock
     private UserRepository userRepository;
@@ -46,7 +46,6 @@ class AuthServiceTest {
     private SignupRequest signupRequest;
     private SigninRequest signinRequest;
     private User savedUser;
-
 
     @BeforeEach
     void setUp() {
@@ -132,8 +131,8 @@ class AuthServiceTest {
 
         // when, then
         assertThatThrownBy(() -> authService.signin(signinRequest))
-                .isInstanceOf(InvalidRequestException.class)
-                .hasMessage("가입되지 않은 유저입니다.");
+                .isInstanceOf(AuthException.class)  // InvalidRequestException -> AuthException으로 변경
+                .hasMessage("이메일 또는 비밀번호가 올바르지 않습니다.");  // 보안 강화된 메시지
 
         verify(userRepository, times(1)).findByEmail(signinRequest.getEmail());
         verify(passwordEncoder, never()).matches(any(), any());
@@ -151,10 +150,11 @@ class AuthServiceTest {
         // when, then
         assertThatThrownBy(() -> authService.signin(signinRequest))
                 .isInstanceOf(AuthException.class)
-                .hasMessage("잘못된 비밀번호입니다.");
+                .hasMessage("이메일 또는 비밀번호가 올바르지 않습니다.");  // 보안 강화된 메시지
 
         verify(userRepository, times(1)).findByEmail(signinRequest.getEmail());
         verify(passwordEncoder, times(1)).matches(signinRequest.getPassword(), savedUser.getPassword());
         verify(jwtUtil, never()).createToken(any(), any(), any());
     }
 }
+
