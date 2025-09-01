@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.config.aop;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

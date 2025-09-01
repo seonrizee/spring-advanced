@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.config.web;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

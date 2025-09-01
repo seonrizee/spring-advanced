@@ -2,6 +2,7 @@ package org.example.expert.config;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.example.expert.config.security.PasswordEncoder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

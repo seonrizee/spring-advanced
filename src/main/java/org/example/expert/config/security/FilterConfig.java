@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.config.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

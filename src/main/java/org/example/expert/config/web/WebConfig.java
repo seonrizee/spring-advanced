@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.config.web;
 
 import java.util.List;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.config.persistence;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
