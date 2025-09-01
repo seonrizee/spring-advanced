@@ -55,7 +55,7 @@
 
 # 5. 과제 해결 과정 및 회고
 
-[https://seonrizee.github.io/blog/2025-09-01-ch4-refactor](https://seonrizee.github.io/blog/2025-08-14-ch3-adv-schedule-api/)
+[과제 해결 과정 및 회고 링크](https://seonrizee.github.io/blog/2025-09-01-ch4-refactor/)
 
 | **과제**                                   | **해결 과정**                                                              |
 |------------------------------------------|------------------------------------------------------------------------|
